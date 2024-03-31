@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from retry_requests import retry
+from flask_cors import CORS
 import numpy as np
 import pickle
 import holidays
@@ -10,7 +11,7 @@ import json
 
 from flask import Flask
 app = Flask(__name__)
-
+CORS(app)
 
 def fetchelec():
     r = requests.get('https://api.electricitymap.org/v3/power-breakdown/history?zone=ES')
