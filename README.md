@@ -1,9 +1,3 @@
-# README
+## Overview
 
-This is the [Flask](http://flask.pocoo.org/) [quick start](http://flask.pocoo.org/docs/1.0/quickstart/#a-minimal-application) example for [Render](https://render.com).
-
-The app in this repo is deployed at [https://flask.onrender.com](https://flask.onrender.com).
-
-## Deployment
-
-Follow the guide at https://render.com/docs/deploy-flask.
+This is the backend service for the Spain Energy Prediction Project, deployed on Render
