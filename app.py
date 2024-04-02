@@ -59,39 +59,19 @@ def gen_input(hourly_temperature_2m, hourly_dew_point_2m, start_time, end_time):
 
         month = t.month
         week = t.isocalendar().week
-        weekday = t.weekday() + 1
-        hour = t.hour + 1
+        weekday = t.weekday()
+        hour = t.hour
         day = t.day
-
-        month_sin = np.sin(month / 12 * 2 * np.pi)
-        month_cos = np.cos(month / 12 * 2 * np.pi)
-
-        week_sin = np.sin(week / 53 * 2 * np.pi)
-        week_cos = np.cos(week / 53 * 2 * np.pi)
-
-        weekday_sin = np.sin(weekday / 7 * 2 * np.pi)
-        weekday_cos = np.cos(weekday / 7 * 2 * np.pi)
-
-        hour_sin = np.sin(hour / 24 * 2 * np.pi)
-        hour_cos = np.cos(hour / 24 * 2 * np.pi)
-
-        day_sin = np.sin(day / 30 * 2 * np.pi)
-        day_cos = np.cos(day / 30 * 2 * np.pi)
 
         X_test.append([
             hourly_temperature_2m[i],
             hourly_dew_point_2m[i],
             year,
-            month_sin,
-            month_cos,
-            weekday_sin,
-            weekday_cos,
-            hour_sin,
-            hour_cos,
-            week_sin,
-            week_cos,
-            day_sin,
-            day_cos,
+            month,
+            weekday,
+            hour,
+            week,
+            day,
             t in ES_holidays or weekday == 7])
         start_time += timedelta(hours=1)
         i += 1
